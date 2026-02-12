@@ -104,10 +104,11 @@ def main():
              print(f"   🔗 Link: {context_name} ({context_url})")
         print("-" * 40)
 
-    # Save raw for inspection
-    with open("notifications.json", "w", encoding="utf-8") as f:
+    # Save raw for inspection (in resources)
+    output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "resources", "notifications.json")
+    with open(output_path, "w", encoding="utf-8") as f:
         json.dump(notifications, f, indent=2, ensure_ascii=False)
-    print(f"\n✅ Raw data saved to notifications.json")
+    print(f"\n✅ Raw data saved to {output_path}")
 
 if __name__ == "__main__":
     main()

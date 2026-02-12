@@ -10,3 +10,6 @@ wheels/
 .venv
 document-browseruse
 document-langchain
+
+resources
+.env

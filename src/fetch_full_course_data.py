@@ -8,10 +8,20 @@ from datetime import datetime
 # Suppress SSL warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
+import sys
+
 TOKEN = "f8df006962c71b2468033bfcf5ed9ed5"
 BASE_URL = "https://moodle.ncku.edu.tw"
-COURSE_ID = 48736
-OUTPUT_FILE = f"course_{COURSE_ID}_full_data.json"
+
+import os
+
+# Check for command line argument for Course ID
+if len(sys.argv) > 1:
+    COURSE_ID = int(sys.argv[1])
+else:
+    COURSE_ID = 48736 # Default (Electronics 1)
+
+OUTPUT_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "resources", f"course_{COURSE_ID}_full_data.json")
 
 def call_moodle_api(function_name, params=None):
     if params is None:
