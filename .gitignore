@@ -11,5 +11,4 @@ wheels/
 document-browseruse
 document-langchain
 
-resources
 .env
