@@ -1,4 +1,3 @@
-
 ---
 name: monitor-moodle
 description: Automated Moodle course data backup, notification tracking, and change detection system.
